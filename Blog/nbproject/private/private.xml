@@ -7,13 +7,18 @@
             <file>file:/F:/JAVAh/Blog/src/java/com/Data.java</file>
             <file>file:/F:/JAVAh/Blog/web/redirect.jsp</file>
             <file>file:/F:/JAVAh/Blog/web/WEB-INF/jsp/regist.jsp</file>
+            <file>file:/F:/JAVAh/Blog/web/css/font-awesome.min.css</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/Home.java</file>
+            <file>file:/F:/JAVAh/Blog/src/java/com/Introduce.java</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/Sjson.java</file>
+            <file>file:/F:/JAVAh/Blog/web/images/bg.jpg</file>
             <file>file:/F:/JAVAh/Blog/web/content.jsp</file>
             <file>file:/F:/JAVAh/Blog/web/test.jsp</file>
+            <file>file:/F:/JAVAh/Blog/src/java/com/Picture.java</file>
             <file>file:/F:/JAVAh/Blog/web/welcome.jsp</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/Publish.java</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/RegistServlet.java</file>
+            <file>file:/F:/JAVAh/Blog/web/css/index.css</file>
             <file>file:/F:/JAVAh/Blog/web/WEB-INF/jsp/index.jsp</file>
             <file>file:/F:/JAVAh/Blog/web/WEB-INF/jsp/login.jsp</file>
             <file>file:/F:/JAVAh/Blog/web/WEB-INF/applicationContext.xml</file>
@@ -22,10 +27,15 @@
             <file>file:/F:/JAVAh/Blog/web/WEB-INF/web.xml</file>
             <file>file:/F:/JAVAh/Blog/web/home.jsp</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/LoginServlet.java</file>
+            <file>file:/F:/JAVAh/Blog/nbproject/build-impl.xml</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/VerifyCode.java</file>
             <file>file:/F:/JAVAh/Blog/web/META-INF/context.xml</file>
+            <file>file:/F:/JAVAh/Blog/web/css/bootstrap.min.css</file>
+            <file>file:/F:/JAVAh/Blog/web/css/style.css</file>
             <file>file:/F:/JAVAh/Blog/web/WEB-INF/dispatcher-servlet.xml</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/Conment.java</file>
+            <file>file:/F:/JAVAh/Blog/web/test.html</file>
+            <file>file:/F:/JAVAh/Blog/web/css/demo.css</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/VerifyCodeServlet.java</file>
             <file>file:/F:/JAVAh/Blog/src/java/com/UserDao.java</file>
         </group>

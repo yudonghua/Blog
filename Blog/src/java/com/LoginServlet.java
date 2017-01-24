@@ -49,7 +49,7 @@ public class LoginServlet extends HttpServlet {
 			return;
 		}
 		if(psw!=null&&!psw.equals(password)){
-			request.setAttribute("msg", "密码错误请重新输入！");
+			request.setAttribute("msg", "密码错误！");
                         session.setAttribute("username", null);
                         session.setAttribute("password", null);
 			request.getRequestDispatcher("/login.htm").forward(request, response);

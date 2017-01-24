@@ -64,19 +64,20 @@ public class Conment extends HttpServlet {
 		int rs=789;
 		try {
 			String driver ="com.mysql.jdbc.Driver";
-			String url ="jdbc:mysql://localhost:3306/mysql";
+			String url ="jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8";
 			String user ="root";
 			String password ="root";
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
                         Statement stat = con.createStatement();
-                        stat.executeUpdate("USE TEST;");
+                        stat.executeUpdate("USE test;");
 			String sql = "select conment from "+author+" where title='"+title+"';";
 		//	pstmt = con.prepareStatement(sql);
                         ResultSet resultSet=stat.executeQuery(sql);
 			if(resultSet.next()){
                             array = JSONArray.fromObject(resultSet.getString("conment"));
                             JSONObject json = JSONObject.fromObject("{name:'"+name+"',conment:'"+conment+"'}");
+                            if(array.getJSONObject(0).toString().equals("null"))array.clear();
                             array.add(json);
                         }else{
                             array = null;
@@ -100,16 +101,16 @@ public class Conment extends HttpServlet {
 		Connection con =null;
 		PreparedStatement pstmt =null;
                 JSONArray array=getconment(author,title,conment,name);
-                if(array.getJSONObject(0).toString().equals("null"))array.clear();
+
 		try {
 			String driver ="com.mysql.jdbc.Driver";
-			String url ="jdbc:mysql://localhost:3306/mysql";
+			String url ="jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8";
 			String user ="root";
 			String password ="root";
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
                         Statement stat = con.createStatement();
-                        stat.executeUpdate("USE TEST;");
+                        stat.executeUpdate("USE test;");
 			String sql = "update "+author+" set conment = '"+array.toString()+"' where title='"+title+"';";
                         System.out.print(sql);
                         stat.execute(sql);

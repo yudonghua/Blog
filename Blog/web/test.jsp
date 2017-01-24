@@ -1,47 +1,43 @@
-<%@page import="net.sf.json.JSONObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.io.*,java.util.*,java.sql.*"%>
 <%@ page import="javax.servlet.http.*,javax.servlet.*" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://www.atg.com/taglibs/json" prefix="json" %> 
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
-
+ 
+<!DOCTYPE html>
 <html>
-<head>
-<title>SELECT 操作</title>
-</head>
-<body>
-<!--
-JDBC 驱动名及数据库 URL 
-数据库的用户名与密码，需要根据自己的设置
-useUnicode=true&characterEncoding=utf-8 防止中文乱码
- -->
-<sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
-     url="jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8"
-     user="root"  password="root"/>
- 
-<sql:query dataSource="${snapshot}" var="result">
-SELECT * from json;
-</sql:query>
-<h1></h1>
-<c:forEach var="row" items="${result.rows}">
-    <p id="test"> ${snapshot} </p>
-    <p id="dd" ></p>
-<tr>
-    <th><a href="content.jsp?content=${row.content}"><c:out value="${row.id}"/></a></th>
-    <td><c:out value="${row.test}"/>
-    </td>
-<script lanuage="javascript">
-       document.write("ddd");
-</script>
-   
-    
-</tr>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="css/index.css"/>
+        <link rel="stylesheet" href="css/style.css"/>
+        <script type="text/javascript" src="js/jquery1.42.min.js"></script>
+        <script type="text/javascript" src="js/jquery.SuperSlide.2.1.1.js"></script>
+        <style>img{border-radius:50%;}</style>
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
+            url="jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=utf-8"
+            user="root"  password="root"/>
 
-</c:forEach>
-       
+        <sql:query dataSource="${snapshot}" var="result">
+        SELECT * from test;
+        </sql:query>
+    <center><h1>博主列表</h1></center>
+        <div id="say">
+                <c:forEach var="row" items="${result.rows}">
 
- 
-</body>
+                    <ul class='say_box'>
+                            <div style="position:relative; height:200px;">
+                                <div style="float:left"><img src="images/author/${row.username}.png" width="200" height="200" alt="博主还没上传照片"/></div>
+                                <div style="float:left;margin: 10px 10px 10px 10px;">简介</div>
+                            </div>
+                            <span class='dateview'><a href="show.jsp?author=${row.username}">${row.username}</a></span>
+                   </ul>
+
+
+                </c:forEach>
+        </div>
+    </body>
 </html>

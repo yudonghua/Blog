@@ -21,13 +21,13 @@ public class UserDao {
 		ResultSet rs = null;
 		try {
 			String driver ="com.mysql.jdbc.Driver";
-			String url ="jdbc:mysql://localhost:3306/mysql";
+			String url ="jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8";
 			String user ="root";
 			String password ="root";
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
                         Statement stat = con.createStatement();
-                        stat.executeUpdate("USE TEST");
+                        stat.executeUpdate("USE test");
 			String sql = "select * from test where username=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, username);
@@ -59,14 +59,14 @@ public class UserDao {
 		PreparedStatement pstmt =null;
 		try {
 			String driver ="com.mysql.jdbc.Driver";
-			String url ="jdbc:mysql://localhost:3306/mysql";
+			String url ="jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8";
 			String user ="root";
 			String password ="root";//改为自己的用户名密码和数据库名
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
                         Statement stat = con.createStatement();
-                        stat.executeUpdate("USE TEST");
-			String sql = "INSERT INTO TEST VALUES (?,?)";
+                        stat.executeUpdate("USE test");
+			String sql = "INSERT INTO test (username,password) VALUES (?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, username);
 			pstmt.setString(2, psw);
@@ -88,8 +88,8 @@ public class UserDao {
 //	public static void main(String[] args) {
 //		String psw =new UserDao().findUsername("ff");
 //		System.out.println(psw);
-//                if(psw==null){
-//                    UserDao u = new UserDao();
+//              if(psw==null){
+ //                   UserDao u = new UserDao();
 //                    u.addUser("ff", "ff");
 //                }
 //		

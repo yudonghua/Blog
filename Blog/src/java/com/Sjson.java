@@ -24,13 +24,13 @@ public class Sjson {
 		ResultSet rs = null;
 		try {
 			String driver ="com.mysql.jdbc.Driver";
-			String url ="jdbc:mysql://localhost:3306/mysql";
+			String url ="jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8";
 			String user ="root";
 			String password ="root";
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
                         Statement stat = con.createStatement();
-                        stat.executeUpdate("USE TEST");
+                        stat.executeUpdate("USE test");
 			String sql = "select * from json where id=?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, 1);

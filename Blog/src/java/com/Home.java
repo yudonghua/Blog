@@ -21,14 +21,14 @@ public class Home {
 		int rs=789;
 		try {
 			String driver ="com.mysql.jdbc.Driver";
-			String url ="jdbc:mysql://localhost:3306/mysql";
+			String url ="jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8";
 			String user ="root";
 			String password ="root";
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
                         Statement stat = con.createStatement();
-                        stat.executeUpdate("USE TEST;");
-			String sql = "create table "+username+" (title varchar(100),content varchar(1000),conment text)";
+                        stat.executeUpdate("USE test;");
+			String sql = "create table "+username+" (title varchar(100),content text,conment text) charset=utf8";
 		//	pstmt = con.prepareStatement(sql);
                         String checkTable="show tables like \""+username+"\"";
                         ResultSet resultSet=stat.executeQuery(checkTable);
@@ -56,13 +56,13 @@ public class Home {
 		PreparedStatement pstmt =null;
 		try {
 			String driver ="com.mysql.jdbc.Driver";
-			String url ="jdbc:mysql://localhost:3306/mysql";
+			String url ="jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf-8";
 			String user ="root";
 			String password ="root";//改为自己的用户名密码和数据库名
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, user, password);
                         Statement stat = con.createStatement();
-                        stat.executeUpdate("USE TEST");
+                        stat.executeUpdate("USE test");
 			String sql = "INSERT INTO "+username+" (title,content) VALUES (?,?)";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, title);
